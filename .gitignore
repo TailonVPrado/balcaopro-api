@@ -1,0 +1,27 @@
+# Arquivos de Build e dependências
+/target/
+/.mvn/
+/mvnw
+/mvnw.cmd
+
+# Arquivos de Log
+*.log
+logs/
+
+# Arquivos de IDEs
+.idea/
+*.iml
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Arquivos do Sistema Operacional
+.DS_Store
+Thumbs.db
+
+# !! IMPORTANTE PARA SEGURANÇA !!
+# Descomente a linha abaixo se seu application.properties contém senhas
+# application.properties
