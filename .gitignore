@@ -1,27 +1,33 @@
-# Arquivos de Build e dependências
-/target/
-/.mvn/
-/mvnw
-/mvnw.cmd
+HELP.md
+target/
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
 
-# Arquivos de Log
-*.log
-logs/
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
 
-# Arquivos de IDEs
-.idea/
+### IntelliJ IDEA ###
+.idea
+*.iws
 *.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
 .vscode/
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-
-# Arquivos do Sistema Operacional
-.DS_Store
-Thumbs.db
-
-# !! IMPORTANTE PARA SEGURANÇA !!
-# Descomente a linha abaixo se seu application.properties contém senhas
-# application.properties

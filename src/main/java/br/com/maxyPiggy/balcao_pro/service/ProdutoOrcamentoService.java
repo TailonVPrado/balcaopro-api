@@ -1,0 +1,43 @@
+package br.com.maxyPiggy.balcao_pro.service;
+
+import br.com.maxyPiggy.balcao_pro.model.ProdutoOrcamento;
+import br.com.maxyPiggy.balcao_pro.repository.ProdutoOrcamentoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
+
+@Service
+public class ProdutoOrcamentoService {
+
+    @Autowired
+    ProdutoOrcamentoRepository produtoOrcamentoRepository;
+
+    public ProdutoOrcamento findById(Long id) throws Exception{
+        Optional<ProdutoOrcamento> retorno = produtoOrcamentoRepository.findById(id);
+        if(retorno.isPresent()){
+            return retorno.get();
+        }else{
+            throw new Exception("ProdutoOrcamento com o ID ("+id+") não encontrado");
+        }
+    }
+
+    public List<ProdutoOrcamento> findAll(){
+        return produtoOrcamentoRepository.findAll();
+    }
+
+    public ProdutoOrcamento insert(ProdutoOrcamento produtoOrcamento) throws Exception{
+        return produtoOrcamentoRepository.saveAndFlush(produtoOrcamento);
+    }
+
+    public ProdutoOrcamento update(Long id, ProdutoOrcamento produtoOrcamento) throws Exception{
+        return produtoOrcamentoRepository.saveAndFlush(produtoOrcamento);
+    }
+
+    public ProdutoOrcamento delete(Long id) throws Exception{
+        ProdutoOrcamento produtoOrcamento = findById(id);
+        produtoOrcamento.setAtivo(false);
+        return produtoOrcamentoRepository.saveAndFlush(produtoOrcamento);
+    }
+}
