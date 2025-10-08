@@ -7,11 +7,11 @@ import java.math.BigDecimal;
 
 @Data
 @Entity
-@Table(name = "PRODUTO_TABELAPRECO")
+@Table(name = "PRODUTO_ORCAMENTO")
 public class ProdutoOrcamento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID_PRODUTO_TABELAPRECO")
+    @Column(name = "ID_PRODUTO_ORCAMENTO")
     private Long id;
 
     @Column(name = "QT_PRODUTO")
@@ -20,6 +20,9 @@ public class ProdutoOrcamento {
     @Column(name = "VL_DESCONTO")
     private BigDecimal desconto;
 
+    @Column(name = "ST_ATIVO")
+    private boolean ativo;
+    
     @ManyToOne
     @JoinColumn(name = "ID_ORCAMENTO")
     private Orcamento orcamento;

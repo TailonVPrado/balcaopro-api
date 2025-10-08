@@ -31,6 +31,9 @@ public class Endereco {
     @Column(name = "NM_CIDADE")
     private String cidade;
 
+    @Column(name = "ST_ATIVO")
+    private boolean ativo;
+
     @Column(name = "DS_COMPLEMENTO")
     private String complemento;
 
