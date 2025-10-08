@@ -31,11 +31,12 @@ public class UsuarioService {
         return usuarioRepository.saveAndFlush(usuario);
     }
 
-    public Usuario update(Usuario usuario) throws Exception{
+    public Usuario update(Long id, Usuario usuario) throws Exception{
         return usuarioRepository.saveAndFlush(usuario);
     }
 
-    public Usuario delete(Usuario usuario) throws Exception{
+    public Usuario delete(Long id) throws Exception{
+        Usuario usuario = findById(id);
         usuario.setAtivo(false);
         return usuarioRepository.saveAndFlush(usuario);
     }

@@ -31,11 +31,12 @@ public class ProdutoTabelaprecoService {
         return produtoTabelaprecoRepository.saveAndFlush(produtoTabelapreco);
     }
 
-    public ProdutoTabelapreco update(ProdutoTabelapreco produtoTabelapreco) throws Exception{
+    public ProdutoTabelapreco update(Long id, ProdutoTabelapreco produtoTabelapreco) throws Exception{
         return produtoTabelaprecoRepository.saveAndFlush(produtoTabelapreco);
     }
 
-    public ProdutoTabelapreco delete(ProdutoTabelapreco produtoTabelapreco) throws Exception{
+    public ProdutoTabelapreco delete(Long id) throws Exception{
+        ProdutoTabelapreco produtoTabelapreco = findById(id);
         produtoTabelapreco.setAtivo(false);
         return produtoTabelaprecoRepository.saveAndFlush(produtoTabelapreco);
     }

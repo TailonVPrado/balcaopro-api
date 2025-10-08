@@ -31,11 +31,12 @@ public class ProdutoService {
         return produtoRepository.saveAndFlush(produto);
     }
 
-    public Produto update(Produto produto) throws Exception{
+    public Produto update(Long id, Produto produto) throws Exception{
         return produtoRepository.saveAndFlush(produto);
     }
 
-    public Produto delete(Produto produto) throws Exception{
+    public Produto delete(Long id) throws Exception{
+        Produto produto = findById(id);
         produto.setAtivo(false);
         return produtoRepository.saveAndFlush(produto);
     }

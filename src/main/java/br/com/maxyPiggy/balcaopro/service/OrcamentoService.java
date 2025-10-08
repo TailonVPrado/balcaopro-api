@@ -31,11 +31,12 @@ public class OrcamentoService {
         return orcamentoRepository.saveAndFlush(orcamento);
     }
 
-    public Orcamento update(Orcamento orcamento) throws Exception{
+    public Orcamento update(Long id, Orcamento orcamento) throws Exception{
         return orcamentoRepository.saveAndFlush(orcamento);
     }
 
-    public Orcamento delete(Orcamento orcamento) throws Exception{
+    public Orcamento delete(Long id) throws Exception{
+        Orcamento orcamento = findById(id);
         orcamento.setAtivo(false);
         return orcamentoRepository.saveAndFlush(orcamento);
     }

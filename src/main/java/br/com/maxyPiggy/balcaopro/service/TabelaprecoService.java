@@ -31,11 +31,12 @@ public class TabelaprecoService {
         return tabelaprecoRepository.saveAndFlush(tabelapreco);
     }
 
-    public Tabelapreco update(Tabelapreco tabelapreco) throws Exception{
+    public Tabelapreco update(Long id, Tabelapreco tabelapreco) throws Exception{
         return tabelaprecoRepository.saveAndFlush(tabelapreco);
     }
 
-    public Tabelapreco delete(Tabelapreco tabelapreco) throws Exception{
+    public Tabelapreco delete(Long id) throws Exception{
+        Tabelapreco tabelapreco = findById(id);
         tabelapreco.setAtivo(false);
         return tabelaprecoRepository.saveAndFlush(tabelapreco);
     }

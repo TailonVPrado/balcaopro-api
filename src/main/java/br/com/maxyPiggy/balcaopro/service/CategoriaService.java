@@ -31,11 +31,12 @@ public class CategoriaService {
         return categoriaRepository.saveAndFlush(categoria);
     }
 
-    public Categoria update(Categoria categoria) throws Exception{
+    public Categoria update(Long id, Categoria categoria) throws Exception{
         return categoriaRepository.saveAndFlush(categoria);
     }
 
-    public Categoria delete(Categoria categoria) throws Exception{
+    public Categoria delete(Long id) throws Exception{
+        Categoria categoria = findById(id);
         categoria.setAtivo(false);
         return categoriaRepository.saveAndFlush(categoria);
     }

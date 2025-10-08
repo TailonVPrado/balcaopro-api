@@ -31,11 +31,12 @@ public class EnderecoService {
         return enderecoRepository.saveAndFlush(endereco);
     }
 
-    public Endereco update(Endereco endereco) throws Exception{
+    public Endereco update(Long id, Endereco endereco) throws Exception{
         return enderecoRepository.saveAndFlush(endereco);
     }
 
-    public Endereco delete(Endereco endereco) throws Exception{
+    public Endereco delete(Long id) throws Exception{
+        Endereco endereco = findById(id);
         endereco.setAtivo(false);
         return enderecoRepository.saveAndFlush(endereco);
     }
